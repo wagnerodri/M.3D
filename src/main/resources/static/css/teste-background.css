@@ -1,0 +1,11 @@
+/* TESTE SIMPLES DE BACKGROUND - Para verificar se a imagem carrega */
+body {
+    background: url('/bg.jpg') center/cover no-repeat fixed !important;
+    min-height: 100vh !important;
+}
+
+/* Remove qualquer overlay para teste */
+body::before,
+body::after {
+    display: none !important;
+}

@@ -1,0 +1,1128 @@
+/* Variáveis de cores */
+:root {
+    --wood-color: #8B4513;
+    --wood-light: #D2691E;
+    --wood-dark: #654321;
+    --bg-light: #f8f9fa;
+}
+
+/* Estilos base */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: 
+        linear-gradient(
+            135deg, 
+            rgba(248, 249, 250, 0.98) 0%, 
+            rgba(255, 255, 255, 0.96) 25%,
+            rgba(248, 249, 250, 0.98) 50%,
+            rgba(255, 255, 255, 0.96) 75%,
+            rgba(248, 249, 250, 0.98) 100%
+        ),
+        radial-gradient(
+            ellipse at top left, 
+            rgba(139, 69, 19, 0.05) 0%, 
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at bottom right, 
+            rgba(210, 105, 30, 0.05) 0%, 
+            transparent 50%
+        ),
+        linear-gradient(
+            45deg,
+            #f8f9fa 0%,
+            #e9ecef 25%,
+            #f8f9fa 50%,
+            #e9ecef 75%,
+            #f8f9fa 100%
+        );
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Overlay adicional para melhor legibilidade */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.02) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.01) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(248,249,250,0.02) 0%, rgba(233,236,239,0.03) 100%);
+    z-index: -2;
+    pointer-events: none;
+    animation: subtleShift 20s ease-in-out infinite;
+}
+
+@keyframes subtleShift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+/* Canvas de partículas */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Animações de entrada */
+.animate-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Parallax elements */
+.parallax {
+    transition: transform 0.1s ease-out;
+}
+
+/* Navegação */
+.navbar-dark.bg-wood {
+    background: linear-gradient(135deg, var(--wood-color), var(--wood-light)) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 2px 20px rgba(139, 69, 19, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.navbar-nav .nav-link:hover {
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Cores e utilitários */
+.text-wood {
+    color: var(--wood-color) !important;
+}
+
+.bg-wood {
+    background-color: var(--wood-color) !important;
+}
+
+.btn-wood {
+    background-color: var(--wood-color);
+    border-color: var(--wood-color);
+    color: white;
+}
+
+.btn-wood:hover {
+    background-color: var(--wood-dark);
+    border-color: var(--wood-dark);
+    color: white;
+}
+
+/* Hero Section */
+.hero-section {
+    background: 
+        linear-gradient(
+            135deg, 
+            rgba(248, 249, 250, 0.7) 0%, 
+            rgba(233, 236, 239, 0.75) 30%,
+            rgba(248, 249, 250, 0.7) 100%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(139, 69, 19, 0.1) 0%,
+            transparent 50%,
+            rgba(210, 105, 30, 0.08) 100%
+        ),
+        /* 
+         * IMAGEM DE FUNDO HERO SECTION - Seção principal de destaque
+         * Descrição: Carpinteiro profissional trabalhando com madeira
+         * URL atual: https://images.unsplash.com/photo-1503387837-b154d5074bd2
+         * Alternativas sugeridas:
+         * - Carpinteiro com serra: photo-1621905251189-08b45d6a269e
+         * - Oficina de marcenaria: photo-1581833971358-2c8b550f87b3
+         * - Artesão trabalhando: photo-1607400201889-565b1ee75f8e
+         * - Mesa de trabalho: photo-1556761175-4b46a572b786
+         */
+        url('https://images.unsplash.com/photo-1503387837-b154d5074bd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover;
+    padding: 120px 0;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+/* Overlay animado para a hero section */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 30% 70%, rgba(139, 69, 19, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(210, 105, 30, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: float 25s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateX(-30px) translateY(-30px) rotate(120deg);
+    }
+    66% {
+        transform: translateX(30px) translateY(-30px) rotate(240deg);
+    }
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 
+        2px 2px 4px rgba(0,0,0,0.4),
+        0 0 20px rgba(255,255,255,0.7),
+        0 0 30px rgba(139, 69, 19, 0.3);
+    background: linear-gradient(135deg, var(--wood-color), var(--wood-light), var(--wood-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.hero-section h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--wood-color), var(--wood-light));
+    border-radius: 2px;
+    box-shadow: 0 2px 10px rgba(139, 69, 19, 0.5);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-shadow: 
+        1px 1px 3px rgba(255,255,255,0.9),
+        0 0 15px rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+}
+
+.hero-icon {
+    font-size: 12rem;
+    color: var(--wood-light);
+    opacity: 0.15;
+    display: block;
+    text-align: center;
+    margin: 50px 0;
+    text-shadow: 0 0 50px rgba(139, 69, 19, 0.3);
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.15;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.25;
+    }
+}
+
+/* Cards */
+.card {
+    border: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 
+        0 8px 32px rgba(139, 69, 19, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 25px 50px rgba(139, 69, 19, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.card-header.bg-wood {
+    background: linear-gradient(135deg, var(--wood-color) 0%, var(--wood-light) 100%) !important;
+    border: none;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Cards de projetos modernos */
+.projeto-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 8px 32px rgba(139, 69, 19, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.projeto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--wood-color), var(--wood-light), var(--wood-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.projeto-card:hover::before {
+    opacity: 1;
+}
+
+.projeto-card:hover {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(2deg) scale(1.05);
+    box-shadow: 
+        0 25px 50px rgba(139, 69, 19, 0.2),
+        0 0 0 1px rgba(139, 69, 19, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.projeto-card .card-body {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.projeto-img {
+    height: 250px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wood-light);
+    border-bottom: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.projeto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.projeto-card:hover .projeto-img img {
+    transform: scale(1.1);
+}
+
+.projeto-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(139, 69, 19, 0.1));
+    pointer-events: none;
+}
+
+.badge {
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.badge-wood {
+    background: linear-gradient(135deg, var(--wood-color), var(--wood-light));
+    color: white;
+}
+
+.badge-secondary {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+}
+
+.projeto-detalhes {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(139, 69, 19, 0.1);
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Formulários */
+.form-label {
+    font-weight: 600;
+    color: var(--wood-dark);
+    margin-bottom: 8px;
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--wood-light);
+    box-shadow: 0 0 0 0.2rem rgba(139, 69, 19, 0.25);
+}
+
+/* Alert customizado */
+.alert-info {
+    background-color: #e8f4f8;
+    border-color: var(--wood-light);
+    color: var(--wood-dark);
+}
+
+/* Seções */
+section {
+    scroll-margin-top: 70px;
+    position: relative;
+}
+
+/* Seções com background semitransparente */
+.bg-light {
+    background: rgba(248, 249, 250, 0.75) !important;
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Seções alternadas */
+section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(6px);
+}
+
+section:nth-child(odd) {
+    background: rgba(248, 249, 250, 0.55);
+    backdrop-filter: blur(6px);
+}
+
+/* Placeholders para imagens */
+.placeholder-img {
+    height: 200px;
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--wood-color);
+    border-radius: 8px;
+    margin: 15px;
+}
+
+.placeholder-img i {
+    margin-bottom: 15px;
+}
+
+.placeholder-img p {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Botões modernos */
+.btn {
+    border-radius: 12px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-wood {
+    background: linear-gradient(135deg, var(--wood-color), var(--wood-light));
+    color: white;
+}
+
+.btn-wood:hover {
+    background: linear-gradient(135deg, var(--wood-dark), var(--wood-color));
+    color: white;
+}
+
+.btn-lg {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 15px;
+}
+
+.btn-outline-wood {
+    color: var(--wood-color);
+    border: 2px solid var(--wood-color);
+    background-color: transparent;
+}
+
+.btn-outline-wood:hover,
+.btn-outline-wood.active {
+    background: linear-gradient(135deg, var(--wood-color), var(--wood-light));
+    border-color: var(--wood-color);
+    color: white;
+}
+
+/* Ícones */
+.fa, .fas, .fab {
+    margin-right: 8px;
+}
+
+/* ========================================
+   RESPONSIVIDADE COMPLETA PARA TODOS OS DISPOSITIVOS
+======================================== */
+
+/* 
+ * SMARTPHONES PEQUENOS - 320px a 480px
+ * Dispositivos: iPhone SE, Galaxy S5, etc.
+ */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero-section {
+        padding: 40px 0;
+        min-height: 350px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+    
+    .hero-icon {
+        font-size: 4rem;
+        margin: 20px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .form-control, .form-select {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 
+ * SMARTPHONES MÉDIOS - 481px a 767px
+ * Dispositivos: iPhone 12, Galaxy S21, etc.
+ */
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero-section {
+        padding: 50px 0;
+        min-height: 400px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-icon {
+        font-size: 6rem;
+        margin: 25px 0;
+    }
+    
+    .projeto-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* 
+ * TABLETS VERTICAIS - 768px a 991px
+ * Dispositivos: iPad, Galaxy Tab, etc.
+ */
+@media (min-width: 768px) and (max-width: 991px) {
+    .hero-section {
+        padding: 70px 0;
+        min-height: 500px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-icon {
+        font-size: 8rem;
+        margin: 30px 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .projeto-card:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+}
+
+/* 
+ * TABLETS HORIZONTAIS E DESKTOPS PEQUENOS - 992px a 1199px
+ * Dispositivos: iPad Pro, laptops pequenos
+ */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hero-section {
+        padding: 100px 0;
+        min-height: 600px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3.2rem;
+    }
+    
+    .hero-icon {
+        font-size: 10rem;
+        margin: 40px 0;
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* 
+ * DESKTOPS MÉDIOS - 1200px a 1399px
+ * Dispositivos: Monitores padrão, laptops grandes
+ */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .container {
+        max-width: 1140px;
+    }
+    
+    .hero-section {
+        padding: 120px 0;
+        min-height: 700px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-icon {
+        font-size: 12rem;
+        margin: 50px 0;
+    }
+}
+
+/* 
+ * DESKTOPS GRANDES - 1400px a 1920px
+ * Dispositivos: Monitores widescreen, iMacs
+ */
+@media (min-width: 1400px) and (max-width: 1920px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-section {
+        padding: 140px 0;
+        min-height: 800px;
+    }
+    
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.4rem;
+    }
+    
+    .hero-icon {
+        font-size: 14rem;
+    }
+    
+    .projeto-card {
+        margin-bottom: 2rem;
+    }
+}
+
+/* 
+ * MONITORES ULTRA-WIDE E TVs - 1921px+
+ * Dispositivos: Monitores 4K, TVs inteligentes
+ */
+@media (min-width: 1921px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    body {
+        font-size: 1.1rem;
+    }
+    
+    .hero-section {
+        padding: 160px 0;
+        min-height: 900px;
+    }
+    
+    .hero-section h1 {
+        font-size: 4.5rem;
+        line-height: 1.1;
+    }
+    
+    .hero-section p {
+        font-size: 1.5rem;
+        padding: 20px 25px;
+    }
+    
+    .hero-icon {
+        font-size: 16rem;
+    }
+    
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .card-body {
+        padding: 2rem;
+    }
+    
+    .form-control, .form-select {
+        padding: 15px 20px;
+        font-size: 1.05rem;
+    }
+}
+
+/* 
+ * ORIENTAÇÃO LANDSCAPE PARA DISPOSITIVOS MÓVEIS
+ * Ajustes especiais para quando o celular está na horizontal
+ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding: 30px 0;
+        min-height: 300px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-icon {
+        font-size: 4rem;
+        margin: 15px 0;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+}
+
+/* 
+ * AJUSTES PARA DISPOSITIVOS COM ALTA DENSIDADE DE PIXELS
+ * Retina displays, telas HiDPI
+ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-icon {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .hero-section h1 {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* 
+ * AJUSTES PARA MODO DARK (se o usuário preferir tema escuro)
+ */
+@media (prefers-color-scheme: dark) {
+    /* Futura implementação do modo escuro */
+}
+
+/* 
+ * AJUSTES PARA USUÁRIOS QUE PREFEREM MENOS MOVIMENTO
+ * Acessibilidade para pessoas sensíveis a animações
+ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    .projeto-card:hover {
+        transform: none;
+    }
+}
+
+/* 
+ * AJUSTES PARA DISPOSITIVOS DE ENTRADA ESPECÍFICOS
+ * Melhora a experiência baseada no tipo de interação
+ */
+
+/* Dispositivos touch (smartphones, tablets) */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px; /* Tamanho mínimo recomendado para touch */
+        min-width: 44px;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 12px 16px; /* Maior área de toque */
+    }
+    
+    .form-control, .form-select {
+        min-height: 44px;
+        font-size: 16px; /* Evita zoom no iOS */
+    }
+    
+    .projeto-card {
+        cursor: default;
+    }
+    
+    /* Remove hover effects em dispositivos touch */
+    .card:hover,
+    .btn:hover,
+    .projeto-card:hover {
+        transform: none;
+    }
+}
+
+/* Dispositivos com mouse preciso (desktops) */
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .navbar-nav .nav-link:hover {
+        transform: translateY(-2px);
+    }
+    
+    .projeto-card:hover {
+        cursor: pointer;
+    }
+}
+
+/* 
+ * AJUSTES PARA TVs E TELAS GRANDES
+ * Otimizações para visualização à distância
+ */
+@media (min-width: 1920px) and (min-height: 1080px) {
+    body {
+        font-size: 1.2rem;
+        line-height: 1.7;
+    }
+    
+    .hero-section h1 {
+        font-size: 5rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-section p {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .btn {
+        font-size: 1.2rem;
+        padding: 18px 40px;
+        letter-spacing: 1px;
+    }
+    
+    .navbar-brand {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Resultado do orçamento */
+#resultado {
+    border-left: 4px solid var(--wood-color);
+    background-color: #f8f9fa;
+    border-color: var(--wood-light);
+}
+
+#resultado h5 {
+    color: var(--wood-dark);
+    margin-bottom: 15px;
+}
+
+.resultado-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.resultado-item:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--wood-color);
+}
+
+/* Melhorias visuais */
+.shadow-lg {
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15) !important;
+}
+
+/* Filtros modernos */
+.filtro-btn {
+    margin: 0 8px 8px 0;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-group .btn {
+    border-radius: 0;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}
+
+/* Loading state */
+.btn.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: auto;
+    border: 2px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animações adicionais para o fundo dinâmico */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    33% { transform: translateY(-10px) scale(1.02); }
+    66% { transform: translateY(5px) scale(0.98); }
+}
+
+@keyframes glow {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 20px rgba(139, 69, 19, 0.4);
+        transform: scale(1.02);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Melhorias visuais para o fundo dinâmico */
+.card:hover {
+    animation: glow 2s infinite, float 3s ease-in-out infinite;
+}
+
+.hero-section h1 {
+    animation: float 4s ease-in-out infinite;
+    background-size: 200% auto;
+    background-image: linear-gradient(
+        45deg, 
+        var(--wood-color) 0%, 
+        var(--wood-light) 25%, 
+        var(--wood-color) 50%, 
+        var(--wood-light) 75%, 
+        var(--wood-color) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: float 4s ease-in-out infinite, shimmer 3s linear infinite;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.projeto-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projeto-card:hover {
+    animation: glow 2s infinite;
+}
+
+/* Canvas deve estar sempre atrás - VERSÃO MELHORADA */
+#particle-canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    opacity: 0.6 !important; /* Reduzido de 0.8 para 0.6 */
+    pointer-events: none !important;
+    filter: blur(0.5px); /* Adiciona um leve blur para suavizar */
+}
