@@ -1,0 +1,30 @@
+# Use OpenJDK 21 Alpine for smaller image
+FROM openjdk:21-jdk-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy Maven wrapper and pom.xml first for better Docker layer caching
+COPY mvnw .
+COPY mvnw.cmd .
+COPY .mvn .mvn
+COPY pom.xml .
+
+# Download dependencies
+RUN ./mvnw dependency:go-offline -B
+
+# Copy source code
+COPY src src
+
+# Build the application
+RUN ./mvnw clean package -DskipTests
+
+# Expose port
+EXPOSE 8080
+
+# Set environment variables for production
+ENV SPRING_PROFILES_ACTIVE=prod
+ENV JAVA_OPTS="-Xmx512m -Xms256m"
+
+# Run the application
+CMD ["java", "-jar", "target/marcenaria-0.0.1-SNAPSHOT.jar"]

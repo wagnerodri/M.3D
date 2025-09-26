@@ -1,0 +1,14 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+healthcheckPath = "/actuator/health"
+healthcheckTimeout = 100
+restartPolicyType = "never"
+
+[[services]]
+name = "web"
+
+[services.variables]
+PORT = "8080"
+JAVA_OPTS = "-Xmx512m -Dserver.port=$PORT"
