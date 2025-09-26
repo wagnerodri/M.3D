@@ -7,188 +7,175 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Marcenaria Artesanal - Orçamento Online</title>
+    <title>Marcenaria Artesanal - Design Moderno e Qualidade Premium</title>
+    
+    <!-- CSS Moderno -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-wood">
+    <!-- Navegação Moderna -->
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-hammer"></i> Marcenaria Artesanal
+                <i class="fas fa-hammer me-2"></i>Marcenaria Artesanal
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#orcamento">Orçamento</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#galeria">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosso-trabalho">Nosso Trabalho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#orcamento">Orçamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nosso-processo">Processo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <!-- Hero Section Moderna -->
+    <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold text-wood">Móveis Sob Medida</h1>
-                    <p class="lead">Transformamos sua ideia em realidade com qualidade artesanal e preços justos. Faça seu orçamento online agora mesmo!</p>
-                    <a href="#orcamento" class="btn btn-wood btn-lg">
-                        <i class="fas fa-calculator"></i> Calcular Orçamento
-                    </a>
-                </div>
-                <div class="col-lg-6">
-                    <div class="hero-image">
-                        <i class="fas fa-chair hero-icon parallax" data-speed="0.3"></i>
+                    <div class="hero-content">
+                        <h1>Móveis Sob Medida com Design Excepcional</h1>
+                        <p class="lead">
+                            Transformamos ideias em móveis únicos, combinando artesania tradicional 
+                            com design contemporâneo. Qualidade premium que valoriza seu espaço.
+                        </p>
+                        <a href="#orcamento" class="btn-primary-modern">
+                            <i class="fas fa-calculator me-2"></i>Solicitar Orçamento
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Orçamento Section -->
-    <section id="orcamento" class="py-5 bg-light">
+    <!-- Nosso Trabalho - Cards com Preços e Animações -->
+    <section id="nosso-trabalho" class="section-modern">
         <div class="container">
-            <h2 class="text-center mb-5">
-                <i class="fas fa-calculator text-wood"></i> Calculadora de Orçamento
-            </h2>
+            <div class="section-header">
+                <h2>Nosso Trabalho</h2>
+                <p>
+                    Conheça alguns dos nossos trabalhos mais recentes, 
+                    que demonstram nossa dedicação à qualidade e inovação.
+                </p>
+            </div>
             
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card shadow-lg">
-                        <div class="card-header bg-wood text-white">
-                            <h4 class="mb-0"><i class="fas fa-ruler"></i> Dados do Projeto</h4>
+            <div class="product-grid">
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Guarda-roupa planejado moderno" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Guarda-Roupa Planejado</h6>
+                        <p>Design moderno com aproveitamento total do espaço, portas de correr e compartimentos internos organizados.</p>
+                        <div class="product-price">A partir de R$ 2.500</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Medidas personalizadas</small><br>
+                            <small><i class="fas fa-check"></i> Instalação inclusa</small><br>
+                            <small><i class="fas fa-check"></i> Garantia 2 anos</small>
                         </div>
-                        <div class="card-body">
-                            <form id="orcamentoForm">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-user"></i> Nome Completo</label>
-                                            <input type="text" class="form-control" id="nome" name="nome" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-phone"></i> Telefone/WhatsApp</label>
-                                            <input type="tel" class="form-control" id="telefone" name="telefone" required>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+                
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Cozinha planejada moderna" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Cozinha Completa</h6>
+                        <p>Móveis funcionais que transformam sua cozinha em um ambiente moderno e prático para o dia a dia.</p>
+                        <div class="product-price">A partir de R$ 8.500</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Projeto 3D incluso</small><br>
+                            <small><i class="fas fa-check"></i> Dobradiças premium</small><br>
+                            <small><i class="fas fa-check"></i> Puxadores inclusos</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Home theater planejado" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Home Theater</h6>
+                        <p>Entretenimento com estilo e organização perfeita, com espaços para equipamentos e decoração.</p>
+                        <div class="product-price">A partir de R$ 1.800</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Furação para cabos</small><br>
+                            <small><i class="fas fa-check"></i> Iluminação LED opcional</small><br>
+                            <small><i class="fas fa-check"></i> Suporte TV incluso</small>
+                        </div>
+                    </div>
+                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-couch"></i> Tipo de Móvel</label>
-                                            <select class="form-select" id="tipoMovel" name="tipoMovel" required>
-                                                <option value="">Selecione o tipo</option>
-                                                <option value="Armário">Armário</option>
-                                                <option value="Guarda-roupa">Guarda-roupa</option>
-                                                <option value="Cômoda">Cômoda</option>
-                                                <option value="Mesa">Mesa</option>
-                                                <option value="Estante">Estante</option>
-                                                <option value="Rack/Home Theater">Rack/Home Theater</option>
-                                                <option value="Bancada">Bancada</option>
-                                                <option value="Aparador">Aparador</option>
-                                                <option value="Outro">Outro</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-tree"></i> Tipo de Madeira</label>
-                                            <select class="form-select" id="tipoMadeira" name="tipoMadeira" required>
-                                                <option value="">Selecione a madeira</option>
-                                                <option value="MDF Branco" data-preco="85">MDF Branco - R$ 85/m²</option>
-                                                <option value="MDF Amadeirado" data-preco="95">MDF Amadeirado - R$ 95/m²</option>
-                                                <option value="MDP Branco" data-preco="75">MDP Branco - R$ 75/m²</option>
-                                                <option value="MDP Amadeirado" data-preco="85">MDP Amadeirado - R$ 85/m²</option>
-                                                <option value="Compensado" data-preco="120">Compensado - R$ 120/m²</option>
-                                                <option value="Pinus" data-preco="150">Pinus - R$ 150/m²</option>
-                                                <option value="Eucalipto" data-preco="180">Eucalipto - R$ 180/m²</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1549497538-303791108f95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Mesa de jantar em madeira" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Mesa de Jantar</h6>
+                        <p>Mesa robusta para reunir a família, com acabamento impecável e design atemporal.</p>
+                        <div class="product-price">A partir de R$ 1.200</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Madeira maciça</small><br>
+                            <small><i class="fas fa-check"></i> Verniz resistente</small><br>
+                            <small><i class="fas fa-check"></i> Até 8 lugares</small>
+                        </div>
+                    </div>
+                </div>
 
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-arrows-alt-h"></i> Largura (m)</label>
-                                            <input type="number" class="form-control" id="largura" name="largura" 
-                                                   step="0.01" min="0.1" max="10" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-arrows-alt-v"></i> Altura (m)</label>
-                                            <input type="number" class="form-control" id="altura" name="altura" 
-                                                   step="0.01" min="0.1" max="5" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-cube"></i> Profundidade (m)</label>
-                                            <input type="number" class="form-control" id="profundidade" name="profundidade" 
-                                                   step="0.01" min="0.1" max="2" required>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Estante biblioteca moderna" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Estante Biblioteca</h6>
+                        <p>Organize seus livros e objetos com estilo, com prateleiras ajustáveis e design elegante.</p>
+                        <div class="product-price">A partir de R$ 900</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Prateleiras ajustáveis</small><br>
+                            <small><i class="fas fa-check"></i> Fixação na parede</small><br>
+                            <small><i class="fas fa-check"></i> Diversos tamanhos</small>
+                        </div>
+                    </div>
+                </div>
 
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-palette"></i> Acabamento</label>
-                                            <select class="form-select" id="acabamento" name="acabamento" required>
-                                                <option value="">Selecione o acabamento</option>
-                                                <option value="Básico" data-adicional="0">Básico (sem custo adicional)</option>
-                                                <option value="Verniz" data-adicional="15">Verniz (+15%)</option>
-                                                <option value="Laca" data-adicional="25">Laca (+25%)</option>
-                                                <option value="Pintura Especial" data-adicional="35">Pintura Especial (+35%)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label class="form-label"><i class="fas fa-cogs"></i> Complexidade</label>
-                                            <select class="form-select" id="complexidade" name="complexidade" required>
-                                                <option value="">Selecione a complexidade</option>
-                                                <option value="Simples" data-multiplicador="1">Simples (padrão)</option>
-                                                <option value="Média" data-multiplicador="1.3">Média (+30%)</option>
-                                                <option value="Complexa" data-multiplicador="1.6">Complexa (+60%)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="form-label"><i class="fas fa-comment"></i> Observações Adicionais</label>
-                                    <textarea class="form-control" id="observacoes" name="observacoes" rows="3" 
-                                              placeholder="Descreva detalhes específicos do seu projeto..."></textarea>
-                                </div>
-
-                                <!-- Resultado -->
-                                <div id="resultado" class="alert alert-info d-none">
-                                    <h5><i class="fas fa-receipt"></i> Resultado do Orçamento</h5>
-                                    <div id="detalhes"></div>
-                                </div>
-
-                                <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-wood btn-lg">
-                                        <i class="fas fa-calculator"></i> Calcular Orçamento
-                                    </button>
-                                    <button type="button" id="whatsappBtn" class="btn btn-success btn-lg d-none">
-                                        <i class="fab fa-whatsapp"></i> Enviar via WhatsApp
-                                    </button>
-                                </div>
-                            </form>
+                <div class="product-card project-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Escrivaninha home office" class="product-img">
+                    </div>
+                    <div class="product-content">
+                        <h6>Escrivaninha Home Office</h6>
+                        <p>Espaço de trabalho otimizado para produtividade, com gavetas e organizadores integrados.</p>
+                        <div class="product-price">A partir de R$ 750</div>
+                        <div class="product-features">
+                            <small><i class="fas fa-check"></i> Gavetas com trilhos</small><br>
+                            <small><i class="fas fa-check"></i> Passagem para cabos</small><br>
+                            <small><i class="fas fa-check"></i> Suporte para CPU</small>
                         </div>
                     </div>
                 </div>
@@ -196,108 +183,288 @@
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="py-5">
+    <!-- Seção de Orçamento Moderna -->
+    <section id="orcamento" class="quote-section">
         <div class="container">
-            <h2 class="text-center mb-5">
-                <i class="fas fa-tools text-wood"></i> Nossos Serviços
-            </h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-home fa-3x text-wood mb-3"></i>
-                            <h5>Móveis Sob Medida</h5>
-                            <p>Móveis planejados para aproveitar cada centímetro do seu espaço.</p>
+            <div class="section-header">
+                <h2>Solicite seu Orçamento</h2>
+                <p>
+                    Preencha os dados abaixo e receba um orçamento detalhado 
+                    para seu projeto personalizado.
+                </p>
+            </div>
+            
+            <div class="quote-form">
+                <form id="orcamentoForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Nome Completo</label>
+                                <input type="text" class="form-control-modern" id="nome" name="nome" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Telefone/WhatsApp</label>
+                                <input type="tel" class="form-control-modern" id="telefone" name="telefone" required>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-wrench fa-3x text-wood mb-3"></i>
-                            <h5>Manutenção</h5>
-                            <p>Reparos e manutenção para prolongar a vida útil dos seus móveis.</p>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Tipo de Móvel</label>
+                                <select class="form-select-modern" id="tipoMovel" name="tipoMovel" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="Armário">Armário</option>
+                                    <option value="Guarda-roupa">Guarda-roupa</option>
+                                    <option value="Cômoda">Cômoda</option>
+                                    <option value="Mesa">Mesa</option>
+                                    <option value="Estante">Estante</option>
+                                    <option value="Rack/Home Theater">Rack/Home Theater</option>
+                                    <option value="Bancada">Bancada</option>
+                                    <option value="Aparador">Aparador</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Tipo de Madeira</label>
+                                <select class="form-select-modern" id="tipoMadeira" name="tipoMadeira" required>
+                                    <option value="">Selecione a madeira</option>
+                                    <option value="MDF Branco" data-preco="85">MDF Branco - R$ 85/m²</option>
+                                    <option value="MDF Amadeirado" data-preco="95">MDF Amadeirado - R$ 95/m²</option>
+                                    <option value="MDP Branco" data-preco="75">MDP Branco - R$ 75/m²</option>
+                                    <option value="MDP Amadeirado" data-preco="85">MDP Amadeirado - R$ 85/m²</option>
+                                    <option value="Compensado" data-preco="120">Compensado - R$ 120/m²</option>
+                                    <option value="Pinus" data-preco="150">Pinus - R$ 150/m²</option>
+                                    <option value="Eucalipto" data-preco="180">Eucalipto - R$ 180/m²</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-paint-brush fa-3x text-wood mb-3"></i>
-                            <h5>Restauração</h5>
-                            <p>Devolva a vida aos seus móveis antigos com nossa restauração profissional.</p>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Largura (m)</label>
+                                <input type="number" class="form-control-modern" id="largura" name="largura" 
+                                       step="0.01" min="0.1" max="10" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Altura (m)</label>
+                                <input type="number" class="form-control-modern" id="altura" name="altura" 
+                                       step="0.01" min="0.1" max="5" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Profundidade (m)</label>
+                                <input type="number" class="form-control-modern" id="profundidade" name="profundidade" 
+                                       step="0.01" min="0.1" max="2" required>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Acabamento</label>
+                                <select class="form-select-modern" id="acabamento" name="acabamento" required>
+                                    <option value="">Selecione o acabamento</option>
+                                    <option value="Básico" data-adicional="0">Básico (sem custo adicional)</option>
+                                    <option value="Verniz" data-adicional="15">Verniz (+15%)</option>
+                                    <option value="Laca" data-adicional="25">Laca (+25%)</option>
+                                    <option value="Pintura Especial" data-adicional="35">Pintura Especial (+35%)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group-modern">
+                                <label class="form-label-modern">Complexidade</label>
+                                <select class="form-select-modern" id="complexidade" name="complexidade" required>
+                                    <option value="">Selecione a complexidade</option>
+                                    <option value="Simples" data-multiplicador="1">Simples (padrão)</option>
+                                    <option value="Média" data-multiplicador="1.3">Média (+30%)</option>
+                                    <option value="Complexa" data-multiplicador="1.6">Complexa (+60%)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-modern">
+                        <label class="form-label-modern">Observações Adicionais</label>
+                        <textarea class="form-control-modern" id="observacoes" name="observacoes" rows="4" 
+                                  placeholder="Descreva detalhes específicos do seu projeto..."></textarea>
+                    </div>
+
+                    <!-- Resultado -->
+                    <div id="resultado">
+                        <h5>Resultado do Orçamento</h5>
+                        <div id="detalhes"></div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn-primary-modern">
+                            <i class="fas fa-calculator me-2"></i>Calcular Orçamento
+                        </button>
+                        <button type="button" id="whatsappBtn" class="btn-primary-modern d-none" style="background: #25d366; margin-left: var(--space-md);">
+                            <i class="fab fa-whatsapp me-2"></i>Enviar via WhatsApp
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- Galeria -->
-    <section id="galeria" class="py-5 bg-light">
+    <!-- Nosso Processo -->
+    <section id="nosso-processo" class="section-modern" style="background: var(--color-light-gray);">
         <div class="container">
-            <h2 class="text-center mb-5">
-                <i class="fas fa-images text-wood"></i> Projetos Realizados
-            </h2>
+            <div class="section-header">
+                <h2>Nosso Processo</h2>
+                <p>
+                    Do conceito à realidade: conheça nossa metodologia exclusiva que 
+                    transforma suas ideias em móveis únicos e personalizados.
+                </p>
+            </div>
+            
             <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="placeholder-img">
-                            <i class="fas fa-bed fa-4x"></i>
-                            <p>Guarda-roupa Planejado</p>
+                <div class="col-lg-6 mb-4">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <div class="process-content">
+                            <div class="process-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h5>Consultoria & Projeto</h5>
+                            <p>
+                                Reunião personalizada para entender suas necessidades, estilo e orçamento. 
+                                Criamos um briefing completo do seu projeto dos sonhos.
+                            </p>
+                            <ul class="process-features">
+                                <li>Visita técnica gratuita</li>
+                                <li>Análise do espaço disponível</li>
+                                <li>Definição de materiais e acabamentos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="placeholder-img">
-                            <i class="fas fa-utensils fa-4x"></i>
-                            <p>Cozinha Completa</p>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <div class="process-content">
+                            <div class="process-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h5>Design 3D Personalizado</h5>
+                            <p>
+                                Visualização fotorrealística do seu projeto com tecnologia 3D avançada. 
+                                Veja cada detalhe antes da produção começar.
+                            </p>
+                            <ul class="process-features">
+                                <li>Renderização em alta qualidade</li>
+                                <li>Ajustes em tempo real</li>
+                                <li>Aprovação visual completa</li>
+                            </ul>
+                            <div class="design-3d-preview mt-3">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Visualização 3D de móvel personalizado" class="img-fluid rounded shadow-sm">
+                                <small class="text-muted">Exemplo de visualização 3D realística</small>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <div class="placeholder-img">
-                            <i class="fas fa-tv fa-4x"></i>
-                            <p>Home Theater</p>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <div class="process-content">
+                            <div class="process-icon">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h5>Produção Artesanal</h5>
+                            <p>
+                                Fabricação cuidadosa com madeiras selecionadas e técnicas tradicionais. 
+                                Cada peça é única e feita sob medida para seu espaço.
+                            </p>
+                            <ul class="process-features">
+                                <li>Madeiras certificadas e premium</li>
+                                <li>Acabamentos personalizados</li>
+                                <li>Controle de qualidade rigoroso</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <div class="process-content">
+                            <div class="process-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h5>Entrega & Instalação</h5>
+                            <p>
+                                Transporte especializado e montagem profissional na sua residência. 
+                                Garantia total e suporte pós-venda.
+                            </p>
+                            <ul class="process-features">
+                                <li>Entrega agendada e pontual</li>
+                                <li>Instalação profissional incluída</li>
+                                <li>Garantia de 2 anos</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contato -->
-    <section id="contato" class="py-5 bg-wood text-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3><i class="fas fa-map-marker-alt"></i> Localização</h3>
-                    <p>Atendemos toda a região metropolitana</p>
-                    <h3><i class="fas fa-clock"></i> Horário</h3>
-                    <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
-                </div>
-                <div class="col-md-6">
-                    <h3><i class="fas fa-phone"></i> Contato</h3>
-                    <p>WhatsApp: (11) 99999-9999</p>
-                    <p>Email: contato@marcenaria.com</p>
-                    <a href="https://wa.me/5511999999999" class="btn btn-success">
-                        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+            
+            <!-- CTA do Processo -->
+            <div class="text-center mt-5">
+                <div class="process-cta">
+                    <h4>Pronto para começar seu projeto?</h4>
+                    <p>Agende sua consultoria gratuita e veja seu móvel em 3D</p>
+                    <a href="#orcamento" class="btn-primary-modern">
+                        <i class="fas fa-rocket me-2"></i>Iniciar Meu Projeto
                     </a>
                 </div>
             </div>
+          
         </div>
     </section>
 
-    <footer class="py-3 bg-dark text-white text-center">
-        <p>&copy; 2025 Marcenaria Artesanal. Todos os direitos reservados.</p>
+    <!-- Footer Moderno -->
+    <footer id="contato" class="footer-modern">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <h5><i class="fas fa-hammer me-2"></i>Marcenaria Artesanal</h5>
+                    <p>Qualidade, tradição e inovação em cada projeto.</p>
+                    <p><strong>Atendimento:</strong> Segunda a Sexta, 8h às 18h | Sábados, 8h às 12h</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h5><i class="fas fa-phone me-2"></i>Entre em Contato</h5>
+                    <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+                    <p><strong>Email:</strong> contato@marcenaria.com</p>
+                    <a href="https://wa.me/5511999999999" class="btn-primary-modern" style="background: #25d366;">
+                        <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                    </a>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: var(--space-lg) 0;">
+            <p class="text-center mb-0">&copy; 2025 Marcenaria Artesanal. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/orcamento.js"></script>
     <script src="/js/galeria.js"></script>
     <script src="/js/background.js"></script>
+    <script src="/js/dynamic-background.js"></script>
 </body>
 </html>
