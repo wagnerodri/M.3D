@@ -376,22 +376,24 @@ class MarcenariaBackground {
     }
 }
 
-// Inicializar quando a página carregar
+// Inicializar quando a página carregar - DESABILITADO PARA EVITAR TREMOR
 document.addEventListener('DOMContentLoaded', () => {
-    new MarcenariaBackground();
+    // new MarcenariaBackground(); // Comentado para remover animações
+    console.log('Animações de fundo desabilitadas para melhor experiência');
 });
 
-// Efeito de paralaxe nos cards
+// Efeito de paralaxe nos cards - VERSÃO SUAVE
 document.addEventListener('mousemove', (e) => {
     const cards = document.querySelectorAll('.card, .projeto-card');
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
 
     cards.forEach((card, index) => {
-        const speed = (index + 1) * 0.02;
-        const xMove = (x - 0.5) * speed * 20;
-        const yMove = (y - 0.5) * speed * 20;
+        const speed = (index + 1) * 0.005; // Movimento muito mais sutil
+        const xMove = (x - 0.5) * speed * 10; // Movimento reduzido
+        const yMove = (y - 0.5) * speed * 10;
         
         card.style.transform = `translate(${xMove}px, ${yMove}px)`;
+        card.style.transition = 'transform 0.3s ease-out'; // Transição suave
     });
 });
